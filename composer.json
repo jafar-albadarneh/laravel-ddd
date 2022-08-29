@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "jafar-albadarneh/laravel-ddd",
+    "description": "Scaffold your Laravel services and actions in a Domain-Driven-Design architecture ",
     "keywords": [
-        ":vendor_name",
+        "jafar-albadarneh",
         "laravel",
-        ":package_slug"
+        "laravel-ddd"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/jafar-albadarneh/laravel-ddd",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "jafar-albadarneh",
+            "email": "jafar.albadarneh@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Jafar\\LaravelDDD\\": "src",
+            "Jafar\\LaravelDDD\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Jafar\\LaravelDDD\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -56,10 +56,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Jafar\\LaravelDDD\\LaravelDDDServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelDDD": "Jafar\\LaravelDDD\\Facades\\LaravelDDD"
             }
         }
     },
