@@ -2,9 +2,9 @@
 
 namespace Jafar\LaravelDDD;
 
+use Jafar\LaravelDDD\Commands\LaravelDDDCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Jafar\LaravelDDD\Commands\LaravelDDDCommand;
 
 class LaravelDDDServiceProvider extends PackageServiceProvider
 {
