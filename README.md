@@ -35,17 +35,24 @@ You can install the package via composer:
 composer require jafar-albadarneh/laravel-ddd
 ```
 
-You can publish the config file with:
+[//]: # (You can publish the config file with:)
 
-```bash
-php artisan vendor:publish --tag="laravel-ddd-config"
-```
+[//]: # ()
+[//]: # (```bash)
 
-This is the contents of the published config file:
+[//]: # (php artisan vendor:publish --tag="laravel-ddd-config")
 
-```php
-return [];
-```
+[//]: # (```)
+
+[//]: # ()
+[//]: # (This is the contents of the published config file:)
+
+[//]: # ()
+[//]: # (```php)
+
+[//]: # (return [];)
+
+[//]: # (```)
 
 ## Usage
 
