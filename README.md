@@ -5,15 +5,27 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/jafar-albadarneh/laravel-ddd/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/jafar-albadarneh/laravel-ddd/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jafar-albadarneh/laravel-ddd.svg?style=flat-square)](https://packagist.org/packages/jafar-albadarneh/laravel-ddd)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+In a Domain-Driven environment, you would want to keep your code as clean and organized as possible.
+This package allows to create a domain-driven architecture in your Laravel app.
+The package assumes the following code structure:
 
-## Support us
+```php
+- app
+    - Domains
+        - [DomainA]
+            - Actions
+            - Events
+            - Http
+            - Listeners
+            - Models
+            - Services
+```
+By design, each domain should be treated in isolation, where all of the actions and services are scoped to the domain.
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-ddd.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-ddd)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+In regard to inter-domain communication, you can create a proxy service at the domain level to bridge the communication gap between the domains.
+Internally you're free to either:
+- Inject and class services directly
+- Follow an internal pub/sub mechanism, where you publish events from (Domain X) and listen to them in other domains [Domain Y, Domain Z ..etc).
 
 ## Installation
 
@@ -21,13 +33,6 @@ You can install the package via composer:
 
 ```bash
 composer require jafar-albadarneh/laravel-ddd
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-ddd-migrations"
-php artisan migrate
 ```
 
 You can publish the config file with:
@@ -39,22 +44,50 @@ php artisan vendor:publish --tag="laravel-ddd-config"
 This is the contents of the published config file:
 
 ```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-ddd-views"
+return [];
 ```
 
 ## Usage
 
-```php
-$laravelDDD = new Jafar\LaravelDDD();
-echo $laravelDDD->echoPhrase('Hello, Jafar!');
+The package is equipped with a command line tool that allows you to create a domain-driven architecture in your Laravel app.
+These command line tools include:
+
+### Generating the Domain
+After you identify the domain, you can generate it by running the following command:
+
+```bash
+php artisan create:domain [domain-name]
 ```
+The command accepts the following options:
+
+- `[domain-name]`: The name of the domain you want to create.
+- `--with-samples=1`: If you want to generate the domain with sample actions and services.
+
+
+### Generating Domain Services
+After creating the domain, you can generate the services by running the following command:
+
+```bash
+php artisan create:service domain=[domain-name]
+```
+
+The command accepts the following options:
+
+- `domain=[domain-name]`: The name of the domain you want to generate the services for.
+- `--name=[service-name]`: If you want to generate a service with a custom name.
+
+### Generating Domain Actions
+After creating the domain, you can generate the actions by running the following command:
+
+```bash
+php artisan create:action domain=[domain-name] --name=[action-name]
+```
+```
+
+The command accepts the following options:
+
+- `domain=[domain-name]`: The name of the domain you want to generate the actions for.
+- `--name=[action-name]`: The name of action class within the domain.
 
 ## Testing
 
@@ -77,7 +110,6 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## Credits
 
 - [jafar-albadarneh](https://github.com/jafar-albadarneh)
-- [All Contributors](../../contributors)
 
 ## License
 
