@@ -33,4 +33,3 @@ it('should append Service suffix to class name if not specified', function () {
     expect(File::exists(app_path("Domains/$domainName/Services/ABCService.php")))
         ->toBe(true);
 });
-
