@@ -37,12 +37,6 @@ class GenerateNewServiceCommand extends Command
     protected $description = 'Create Domain Service Class';
 
     /**
-     * Filesystem instance
-     * @var Filesystem
-     */
-
-
-    /**
      * Create a new command instance.
      * @param Filesystem $files
      */
