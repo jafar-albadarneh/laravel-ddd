@@ -2,9 +2,12 @@
 
 namespace Jafar\LaravelDDD;
 
-use Jafar\LaravelDDD\Commands\LaravelDDDCommand;
+use Jafar\LaravelDDD\Commands\GenerateNewActionCommand;
+use Jafar\LaravelDDD\Commands\GenerateNewDomainCommand;
+use Jafar\LaravelDDD\Commands\GenerateNewServiceCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Jafar\LaravelDDD\Commands\LaravelDDDCommand;
 
 class LaravelDDDServiceProvider extends PackageServiceProvider
 {
@@ -19,7 +22,11 @@ class LaravelDDDServiceProvider extends PackageServiceProvider
             ->name('laravel-ddd')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel-ddd_table')
-            ->hasCommand(LaravelDDDCommand::class);
+            ->hasCommand(LaravelDDDCommand::class)
+            ->hasCommands([
+               GenerateNewActionCommand::class,
+               GenerateNewServiceCommand::class,
+               GenerateNewDomainCommand::class,
+            ]);
     }
 }

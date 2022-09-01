@@ -1,0 +1,11 @@
+<?php
+
+namespace $NAMESPACE$;
+
+class $CLASS_NAME$Action
+{
+    public function execute()
+    {
+
+    }
+}

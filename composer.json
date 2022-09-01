@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.0|7.4",
         "spatie/laravel-package-tools": "^1.9.2",
         "illuminate/contracts": "^9.0"
     },
@@ -26,12 +26,17 @@
         "nunomaduro/larastan": "^2.0.1",
         "orchestra/testbench": "^7.0",
         "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-faker": "^1.0",
+        "pestphp/pest-plugin-global-assertions": "^1.0",
         "pestphp/pest-plugin-laravel": "^1.1",
+        "pestphp/pest-plugin-mock": "^1.0",
+        "pestphp/pest-plugin-parallel": "^1.2",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
         "phpunit/phpunit": "^9.5",
-        "spatie/laravel-ray": "^1.26"
+        "spatie/laravel-ray": "^1.26",
+        "spatie/pest-plugin-test-time": "^1.1"
     },
     "autoload": {
         "psr-4": {

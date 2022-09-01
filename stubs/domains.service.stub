@@ -1,0 +1,11 @@
+<?php
+
+namespace $NAMESPACE$;
+
+class $CLASS_NAME$Service
+{
+    public function sampleService($action)
+    {
+        return $action->execute();
+    }
+}
