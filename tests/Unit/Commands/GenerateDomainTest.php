@@ -39,17 +39,3 @@ it('should generate samples if specified', function () {
     expect(File::exists(app_path("Domains/$domainName/Services/{$domainName}Service.php")))
         ->toBe(true);
 });
-
-function cleanupDirectory($directory): bool
-{
-    if (is_dir($directory)) {
-        $files = array_diff(scandir($directory), ['.', '..']);
-        foreach ($files as $file) {
-            (is_dir("$directory/$file")) ? cleanupDirectory("$directory/$file") : unlink("$directory/$file");
-        }
-
-        return rmdir($directory);
-    } else {
-        return false;
-    }
-}
