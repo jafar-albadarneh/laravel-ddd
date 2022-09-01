@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\File;
 
 beforeEach(function () {
-    cleanupDirectory(app_path("Domains"));
+    cleanupDirectory(app_path('Domains'));
 });
 
 afterAll(function () {
-    cleanupDirectory(app_path("Domains"));
+    cleanupDirectory(app_path('Domains'));
 });
 
 it('can generate a domain', function () {
@@ -43,10 +43,11 @@ it('should generate samples if specified', function () {
 function cleanupDirectory($directory): bool
 {
     if (is_dir($directory)) {
-        $files = array_diff(scandir($directory), array('.', '..'));
+        $files = array_diff(scandir($directory), ['.', '..']);
         foreach ($files as $file) {
             (is_dir("$directory/$file")) ? cleanupDirectory("$directory/$file") : unlink("$directory/$file");
         }
+
         return rmdir($directory);
     } else {
         return false;

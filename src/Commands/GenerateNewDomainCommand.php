@@ -28,31 +28,34 @@ class GenerateNewDomainCommand extends Command
      * Execute the console command.
      *
      * @return int
+     *
      * @throws Exception
      */
     public function handle(): int
     {
         $domainName = $this->option('name');
-        if(empty($domainName))
-            $domainName = $this->ask("Please enter the name of the Domain?");
+        if (empty($domainName)) {
+            $domainName = $this->ask('Please enter the name of the Domain?');
+        }
         $domainName = Str::studly($domainName);
 
         $this->warn("creating '{$domainName}' Domain now!");
 
-        try{
+        try {
             $this->createDomain($domainName);
-        }catch (Exception $exception){
+        } catch (Exception $exception) {
             $this->error($exception->getMessage());
+
             return 1;
         }
 
-        if(!empty($this->option('with-samples')))
-        {
-            $this->warn("Generating Sample (Action, Service) classes!");
+        if (! empty($this->option('with-samples'))) {
+            $this->warn('Generating Sample (Action, Service) classes!');
             $this->initializeDomain($domainName);
         }
 
-        $this->comment("Domain Created Successfully!");
+        $this->comment('Domain Created Successfully!');
+
         return self::SUCCESS;
     }
 
@@ -62,12 +65,14 @@ class GenerateNewDomainCommand extends Command
     private function createDomain(string $domainName)
     {
         $appPath = $this->laravel['path'];
-        if(!File::exists($appPath.'/Domains'))
+        if (! File::exists($appPath.'/Domains')) {
             File::makeDirectory($appPath.'/Domains');
-        $domainPath = $appPath . '/Domains/' . $domainName;
+        }
+        $domainPath = $appPath.'/Domains/'.$domainName;
 
-        if(File::exists($domainPath))
+        if (File::exists($domainPath)) {
             throw new Exception("Domain '{$domainName}' already exists!");
+        }
 
         File::ensureDirectoryExists($domainPath);
         //cd app/Domain/{$domainName}
