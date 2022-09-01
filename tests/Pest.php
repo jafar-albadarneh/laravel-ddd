@@ -5,7 +5,7 @@ use Jafar\LaravelDDD\Tests\TestCase;
 uses(TestCase::class)->in(__DIR__);
 
 uses()
-    ->afterAll(fn() => cleanupDirectory(app_path('Domains')));
+    ->afterAll(fn () => cleanupDirectory(app_path('Domains')));
 
 function cleanupDirectory($directory): bool
 {
