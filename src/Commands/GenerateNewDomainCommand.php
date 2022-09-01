@@ -15,7 +15,7 @@ class GenerateNewDomainCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'domain:create {--name= : Domain name!} {--with-samples=}';
+    protected $signature = 'create:domain {--name= : Domain name!} {--with-samples=}';
 
     /**
      * The console command description.
@@ -98,7 +98,7 @@ class GenerateNewDomainCommand extends Command
 
     private function initializeDomain(string $domainName)
     {
-        Artisan::call('action:create', ['--domain' => $domainName, '--name' => 'SampleAction']);
-        Artisan::call('service:create', ['--domain' => $domainName]);
+        Artisan::call('create:action', ['--domain' => $domainName, '--name' => 'SampleAction']);
+        Artisan::call('create:service', ['--domain' => $domainName]);
     }
 }
