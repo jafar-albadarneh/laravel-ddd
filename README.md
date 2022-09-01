@@ -82,7 +82,6 @@ After creating the domain, you can generate the actions by running the following
 ```bash
 php artisan create:action domain=[domain-name] --name=[action-name]
 ```
-```
 
 The command accepts the following options:
 
