@@ -12,15 +12,20 @@ class GenerateNewServiceCommand extends Command
     use WithStubs, WithDomainOptions;
 
     protected ?string $domainName;
+
     protected ?string $className;
+
     protected string $namespacePostfix;
+
     protected string $stubName;
+
     protected string $type;
+
     protected const STUB_NAME = 'domains.service.stub';
+
     protected const FACADE_STUB_NAME = 'domains.service.facade.stub';
 
     protected $files;
-
 
     /**
      * The name and signature of the console command.
@@ -38,13 +43,14 @@ class GenerateNewServiceCommand extends Command
 
     /**
      * Filesystem instance
+     *
      * @var Filesystem
      */
 
-
     /**
      * Create a new command instance.
-     * @param Filesystem $files
+     *
+     * @param  Filesystem  $files
      */
     public function __construct(Filesystem $files)
     {

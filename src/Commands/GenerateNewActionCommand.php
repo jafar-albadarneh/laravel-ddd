@@ -1,6 +1,6 @@
 <?php
-namespace Jafar\LaravelDDD\Commands;
 
+namespace Jafar\LaravelDDD\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -12,14 +12,18 @@ class GenerateNewActionCommand extends Command
     use WithStubs, WithDomainOptions;
 
     protected ?string $domainName;
+
     protected ?string $className;
+
     protected string $namespacePostfix;
+
     protected string $stubName;
+
     protected string $type;
+
     protected const STUB_NAME = 'domains.action.stub';
 
     protected $files;
-
 
     /**
      * The name and signature of the console command.
@@ -37,7 +41,8 @@ class GenerateNewActionCommand extends Command
 
     /**
      * Create a new command instance.
-     * @param Filesystem $files
+     *
+     * @param  Filesystem  $files
      */
     public function __construct(Filesystem $files)
     {
@@ -57,6 +62,7 @@ class GenerateNewActionCommand extends Command
     {
         $this->generateClass();
         $this->comment('All done');
+
         return self::SUCCESS;
     }
 }

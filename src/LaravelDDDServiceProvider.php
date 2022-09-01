@@ -5,9 +5,9 @@ namespace Jafar\LaravelDDD;
 use Jafar\LaravelDDD\Commands\GenerateNewActionCommand;
 use Jafar\LaravelDDD\Commands\GenerateNewDomainCommand;
 use Jafar\LaravelDDD\Commands\GenerateNewServiceCommand;
+use Jafar\LaravelDDD\Commands\LaravelDDDCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Jafar\LaravelDDD\Commands\LaravelDDDCommand;
 
 class LaravelDDDServiceProvider extends PackageServiceProvider
 {
@@ -24,9 +24,9 @@ class LaravelDDDServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasCommand(LaravelDDDCommand::class)
             ->hasCommands([
-               GenerateNewActionCommand::class,
-               GenerateNewServiceCommand::class,
-               GenerateNewDomainCommand::class,
+                GenerateNewActionCommand::class,
+                GenerateNewServiceCommand::class,
+                GenerateNewDomainCommand::class,
             ]);
     }
 }

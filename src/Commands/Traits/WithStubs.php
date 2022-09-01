@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Jafar\LaravelDDD\Commands\Traits;
 
 use Exception;
@@ -11,6 +10,7 @@ trait WithStubs
 {
     /**
      * Return the Singular Capitalize Name
+     *
      * @param $name
      * @return string
      */
@@ -21,11 +21,12 @@ trait WithStubs
 
     /**
      * Return the stub file path
+     *
      * @return string
      */
     public function getStubPath(): string
     {
-        return __DIR__ . "/../../../stubs/{$this->stubName}";
+        return __DIR__."/../../../stubs/{$this->stubName}";
     }
 
     /**
@@ -33,14 +34,14 @@ trait WithStubs
      * Map the stub variables present in stub to its value
      *
      * @return array
-     *
      */
     public function getStubVariables(): array
     {
-        $className = Str::contains($this->className, $this->type)? Str::replace($this->type,'',$this->className): $this->className;
+        $className = Str::contains($this->className, $this->type) ? Str::replace($this->type, '', $this->className) : $this->className;
+
         return [
-            'NAMESPACE'         => "App\\Domains\\{$this->domainName}\\{$this->namespacePostfix}",
-            'CLASS_NAME'        => $this->getSingularClassName($className),
+            'NAMESPACE' => "App\\Domains\\{$this->domainName}\\{$this->namespacePostfix}",
+            'CLASS_NAME' => $this->getSingularClassName($className),
         ];
     }
 
@@ -48,32 +49,28 @@ trait WithStubs
      * Get the stub path and the stub variables
      *
      * @return bool|mixed|string
-     *
      */
     public function getSourceFile()
     {
         return $this->getStubContents($this->getStubPath(), $this->getStubVariables());
     }
 
-
     /**
      * Replace the stub variables(key) with the desire value
      *
      * @param $stub
-     * @param array $stubVariables
+     * @param  array  $stubVariables
      * @return bool|mixed|string
      */
-    public function getStubContents($stub , $stubVariables = [])
+    public function getStubContents($stub, $stubVariables = [])
     {
         $contents = file_get_contents($stub);
 
-        foreach ($stubVariables as $search => $replace)
-        {
-            $contents = str_replace('$'.$search.'$' , $replace, $contents);
+        foreach ($stubVariables as $search => $replace) {
+            $contents = str_replace('$'.$search.'$', $replace, $contents);
         }
 
         return $contents;
-
     }
 
     /**
@@ -83,8 +80,9 @@ trait WithStubs
      */
     public function getSourceFilePath(): string
     {
-        $className = Str::contains($this->className, $this->type)? Str::replace($this->type,'',$this->className): $this->className;
-        $classNamePostfix = ($this->namespacePostfix === 'ServiceFacades')? 'Service' : $this->getSingularClassName($this->namespacePostfix);
+        $className = Str::contains($this->className, $this->type) ? Str::replace($this->type, '', $this->className) : $this->className;
+        $classNamePostfix = ($this->namespacePostfix === 'ServiceFacades') ? 'Service' : $this->getSingularClassName($this->namespacePostfix);
+
         return base_path("app/Domains/{$this->domainName}/{$this->namespacePostfix}")
             .'/'
             .$this->getSingularClassName($className)
@@ -95,7 +93,7 @@ trait WithStubs
     /**
      * Build the directory for the class if necessary.
      *
-     * @param string $path
+     * @param  string  $path
      * @return string
      */
     protected function makeDirectory(string $path): string
@@ -117,17 +115,15 @@ trait WithStubs
 
         $contents = $this->getSourceFile();
 
-        if (!$this->files->exists($path)) {
+        if (! $this->files->exists($path)) {
             try {
                 $this->files->put($path, $contents);
                 $this->info("File : {$path} created");
-            }catch (Exception $exception)
-            {
+            } catch (Exception $exception) {
                 $this->error("Domain {$this->domainName} not found! please make sure you create the domain first");
             }
         } else {
             $this->warn("File : {$path} already exits");
         }
     }
-
 }

@@ -3,8 +3,8 @@
 namespace Jafar\LaravelDDD\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Jafar\LaravelDDD\LaravelDDDServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
