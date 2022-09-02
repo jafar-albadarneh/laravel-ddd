@@ -28,7 +28,7 @@ class LaravelDDDServiceProvider extends PackageServiceProvider
                 GenerateNewActionCommand::class,
                 GenerateNewServiceCommand::class,
                 GenerateNewDomainCommand::class,
-                GenerateNewDTOCommand::class
+                GenerateNewDTOCommand::class,
             ]);
     }
 }

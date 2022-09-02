@@ -12,11 +12,17 @@ class GenerateNewDTOCommand extends Command
     use WithClassGenerator, WithDomainOptions;
 
     protected $domainName;
+
     protected $className;
+
     protected string $namespacePostfix;
+
     protected string $stubName;
+
     protected string $type;
+
     protected const STUB_NAME = 'domains.dto.stub';
+
     protected Filesystem $files;
 
     /**
@@ -35,7 +41,8 @@ class GenerateNewDTOCommand extends Command
 
     /**
      * Create a new command instance.
-     * @param Filesystem $files
+     *
+     * @param  Filesystem  $files
      */
     public function __construct(Filesystem $files)
     {
@@ -55,6 +62,7 @@ class GenerateNewDTOCommand extends Command
     {
         $this->generateClass();
         $this->comment('DTO created successfully.');
+
         return self::SUCCESS;
     }
 }
