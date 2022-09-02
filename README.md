@@ -95,6 +95,19 @@ The command accepts the following options:
 - `domain=[domain-name]`: The name of the domain you want to generate the actions for.
 - `--name=[action-name]`: The name of action class within the domain.
 
+### Generating Domain DTOs
+After creating the domain, settle with your services, you can generate DTOs by running the following command:
+
+```bash
+php artisan create:dto domain=[domain-name] --name=[dto-name]
+```
+
+The command accepts the following options:
+
+- `domain=[domain-name]`: The name of the domain you want to generate the DTO for.
+- `--name=[dto-name]`: The name of DTO class within the domain.
+
+
 ## Testing
 
 ```bash
