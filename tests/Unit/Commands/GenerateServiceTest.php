@@ -8,9 +8,7 @@ beforeEach(function () use ($domainName) {
     $this->artisan("create:domain --name=$domainName");
 });
 
-afterAll(function () {
-    cleanupDirectory(app_path('Domains'));
-});
+afterAll(fn () => cleanupDirectory(app_path('Domains')));
 
 uses()->group('services');
 

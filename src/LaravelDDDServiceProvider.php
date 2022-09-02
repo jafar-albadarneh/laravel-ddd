@@ -4,6 +4,7 @@ namespace Jafar\LaravelDDD;
 
 use Jafar\LaravelDDD\Commands\GenerateNewActionCommand;
 use Jafar\LaravelDDD\Commands\GenerateNewDomainCommand;
+use Jafar\LaravelDDD\Commands\GenerateNewDTOCommand;
 use Jafar\LaravelDDD\Commands\GenerateNewServiceCommand;
 use Jafar\LaravelDDD\Commands\LaravelDDDCommand;
 use Spatie\LaravelPackageTools\Package;
@@ -27,6 +28,7 @@ class LaravelDDDServiceProvider extends PackageServiceProvider
                 GenerateNewActionCommand::class,
                 GenerateNewServiceCommand::class,
                 GenerateNewDomainCommand::class,
+                GenerateNewDTOCommand::class,
             ]);
     }
 }
