@@ -81,6 +81,7 @@ class GenerateNewDomainCommand extends Command
         //create required folders
         File::ensureDirectoryExists("$domainPath/Http");
         File::ensureDirectoryExists("$domainPath/Actions");
+        File::ensureDirectoryExists("$domainPath/DTOs");
         File::ensureDirectoryExists("$domainPath/Events");
         File::ensureDirectoryExists("$domainPath/Listeners");
         File::ensureDirectoryExists("$domainPath/Services");
