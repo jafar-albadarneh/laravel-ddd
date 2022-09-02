@@ -6,7 +6,7 @@ use Exception;
 use Illuminate\Support\Pluralizer;
 use Illuminate\Support\Str;
 
-trait WithStubs
+trait WithClassGenerator
 {
     /**
      * Return the Singular Capitalize Name

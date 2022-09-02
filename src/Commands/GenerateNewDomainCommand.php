@@ -45,13 +45,12 @@ class GenerateNewDomainCommand extends Command
             $this->createDomain($domainName);
         } catch (Exception $exception) {
             $this->error($exception->getMessage());
-
-            return 1;
+            return self::FAILURE;
         }
 
         if (! empty($this->option('with-samples'))) {
             $this->warn('Generating Sample (Action, Service) classes!');
-            $this->initializeDomain($domainName);
+            $this->generateSamples($domainName);
         }
 
         $this->comment('Domain Created Successfully!');
@@ -96,7 +95,7 @@ class GenerateNewDomainCommand extends Command
         File::chmod($domainPath);
     }
 
-    private function initializeDomain(string $domainName)
+    private function generateSamples(string $domainName)
     {
         Artisan::call('create:action', ['--domain' => $domainName, '--name' => 'SampleAction']);
         Artisan::call('create:service', ['--domain' => $domainName]);
