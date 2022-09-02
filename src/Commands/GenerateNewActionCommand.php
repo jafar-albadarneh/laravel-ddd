@@ -4,8 +4,8 @@ namespace Jafar\LaravelDDD\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use Jafar\LaravelDDD\Commands\Traits\WithDomainOptions;
 use Jafar\LaravelDDD\Commands\Traits\WithClassGenerator;
+use Jafar\LaravelDDD\Commands\Traits\WithDomainOptions;
 
 class GenerateNewActionCommand extends Command
 {
