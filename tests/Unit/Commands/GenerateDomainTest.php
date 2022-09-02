@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\File;
-use function Pest\Faker\faker;
 
 $domainName = 'SampleDomain';
 
@@ -15,18 +14,17 @@ afterAll(function () {
 
 uses()->group('domains');
 
-
-it('can generate a domain', function () use($domainName) {
+it('can generate a domain', function () use ($domainName) {
     $this->artisan("create:domain --name={$domainName}")->assertExitCode(0);
     $this->assertDirectoryExists(app_path("Domains/$domainName"));
 });
 
-it('should not create a domain if it already exists', function () use($domainName) {
+it('should not create a domain if it already exists', function () use ($domainName) {
     $this->artisan("create:domain --name={$domainName}")->assertExitCode(0);
     $this->artisan("create:domain --name={$domainName}")->assertExitCode(1);
 });
 
-it('should not generate samples if not specified', function () use($domainName) {
+it('should not generate samples if not specified', function () use ($domainName) {
     $this->artisan("create:domain --name={$domainName}")->assertExitCode(0);
     expect(File::exists(app_path("Domains/$domainName/Actions/SampleAction.php")))
         ->toBe(false);
@@ -34,7 +32,7 @@ it('should not generate samples if not specified', function () use($domainName) 
         ->toBe(false);
 });
 
-it('should generate samples if specified', function () use($domainName) {
+it('should generate samples if specified', function () use ($domainName) {
     $this->artisan("create:domain --name={$domainName} --with-samples=true")->assertExitCode(0);
     expect(File::exists(app_path("Domains/$domainName/Actions/SampleAction.php")))
         ->toBe(true);

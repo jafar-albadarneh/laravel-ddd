@@ -45,6 +45,7 @@ class GenerateNewDomainCommand extends Command
             $this->createDomain($domainName);
         } catch (Exception $exception) {
             $this->error($exception->getMessage());
+
             return self::FAILURE;
         }
 
