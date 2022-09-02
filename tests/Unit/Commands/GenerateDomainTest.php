@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\File;
 use function Pest\Faker\faker;
 
-$domainName = faker()->unique()->domainWord;
+$domainName = 'SampleDomain';
 
 beforeEach(function () {
     cleanupDirectory(app_path('Domains'));

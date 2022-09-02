@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\File;
 use function Pest\Faker\faker;
 
-$domainName = faker()->unique()->domainWord;
+$domainName = 'SampleDomain';
 
 beforeEach(function () use($domainName) {
     $this->artisan("create:domain --name=$domainName");
