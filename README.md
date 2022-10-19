@@ -108,6 +108,32 @@ The command accepts the following options:
 - `--name=[dto-name]`: The name of DTO class within the domain.
 
 
+### Generating Domain DTOs
+After creating the domain, you can generate DTOs to support data streams among your services and actions by running the following command:
+
+```bash
+php artisan create:dto domain=[domain-name] --name=[dto-name]
+```
+
+The command accepts the following options:
+
+- `domain=[domain-name]`: The name of the domain you want to generate the actions for.
+- `--name=[action-name]`: The name of DTO class within the domain.
+
+### Generating Native Laravel Resources
+You won't be getting the full potential of the package if you can't associate native laravel resources (Controllers, Requests, Resources, Middlewares) with your domain.
+There are two ways to achieve this:
+
+1- Laravel artisan commands already support passing a namespace to any command. So instead of placing all the resources within the `App\Http` namespace, you can prefix your resource with the domain namespace.
+For example, if you want to create a controller for the `Authentication` domain, you can run the following command:
+
+```bash
+php artisan make:controller App\\Domains\\Authentication\\Http\\Controllers\\LoginController
+```
+
+2- [TODO] The package overrides Laravel artisan commands to support passing a domain name to the command. So instead of passing the full namespace of the domain, you can pass a `--domain=[domain-name]` parameter to your command.
+> Note: This feature is not yet implemented.
+
 ## Testing
 
 ```bash
