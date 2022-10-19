@@ -61,7 +61,7 @@ class GenerateNewActionCommand extends Command
     public function handle(): int
     {
         $this->generateClass();
-        $this->comment('All done');
+        $this->comment('Action created successfully.');
 
         return self::SUCCESS;
     }

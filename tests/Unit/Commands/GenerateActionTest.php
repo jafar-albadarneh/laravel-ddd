@@ -8,6 +8,8 @@ beforeEach(function () use ($domainName) {
     $this->artisan("create:domain --name=$domainName");
 });
 
+afterAll(fn () => cleanupDirectory(app_path('Domains')));
+
 uses()->group('actions');
 
 it('can generate an action class within the domain', function () use ($domainName) {

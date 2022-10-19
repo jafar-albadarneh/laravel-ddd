@@ -7,13 +7,13 @@ use Illuminate\Filesystem\Filesystem;
 use Jafar\LaravelDDD\Commands\Traits\WithClassGenerator;
 use Jafar\LaravelDDD\Commands\Traits\WithDomainOptions;
 
-class GenerateNewServiceCommand extends Command
+class GenerateNewDTOCommand extends Command
 {
     use WithClassGenerator, WithDomainOptions;
 
-    protected ?string $domainName;
+    protected $domainName;
 
-    protected ?string $className;
+    protected $className;
 
     protected string $namespacePostfix;
 
@@ -21,25 +21,23 @@ class GenerateNewServiceCommand extends Command
 
     protected string $type;
 
-    protected const STUB_NAME = 'domains.service.stub';
+    protected const STUB_NAME = 'domains.dto.stub';
 
-    protected const FACADE_STUB_NAME = 'domains.service.facade.stub';
-
-    protected $files;
+    protected Filesystem $files;
 
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'create:service {--domain=} {--name=}';
+    protected $signature = 'create:dto {--domain=} {--name=}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create Domain Service Class';
+    protected $description = 'Create a new DTO inside a Domain';
 
     /**
      * Create a new command instance.
@@ -49,9 +47,10 @@ class GenerateNewServiceCommand extends Command
     public function __construct(Filesystem $files)
     {
         parent::__construct();
+
         $this->files = $files;
-        $this->namespacePostfix = 'Services';
-        $this->type = 'Service';
+        $this->namespacePostfix = 'DTOs';
+        $this->type = 'DTO';
     }
 
     /**
@@ -61,9 +60,8 @@ class GenerateNewServiceCommand extends Command
      */
     public function handle(): int
     {
-        //Generating ServiceClass
-        $this->generateClass(true);
-        $this->comment('Service created successfully.');
+        $this->generateClass();
+        $this->comment('DTO created successfully.');
 
         return self::SUCCESS;
     }

@@ -8,9 +8,7 @@ beforeEach(function () {
     cleanupDirectory(app_path('Domains'));
 });
 
-afterAll(function () {
-    cleanupDirectory(app_path('Domains'));
-});
+afterAll(fn () => cleanupDirectory(app_path('Domains')));
 
 uses()->group('domains');
 
