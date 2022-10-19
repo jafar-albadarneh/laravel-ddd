@@ -134,6 +134,7 @@ php artisan make:controller App\\Domains\\Authentication\\Http\\Controllers\\Log
 2- [TODO] The package overrides Laravel artisan commands to support passing a domain name to the command. So instead of passing the full namespace of the domain, you can pass a `--domain=[domain-name]` parameter to your command.
 > Note: This feature is not yet implemented.
 
+
 ## Testing
 
 ```bash
