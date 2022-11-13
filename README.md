@@ -5,6 +5,9 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/jafar-albadarneh/laravel-ddd/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/jafar-albadarneh/laravel-ddd/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jafar-albadarneh/laravel-ddd.svg?style=flat-square)](https://packagist.org/packages/jafar-albadarneh/laravel-ddd)
 
+[<img src="https://banners.beyondco.de/Laravel%20DDD.png?theme=dark&packageManager=composer+require&packageName=jafar-albadarneh%2Flaravel-ddd&pattern=brickWall&style=style_1&description=Domain-Driven-Design+in+Actions+for+Laravel+Monolith&md=1&showWatermark=0&fontSize=125px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg"/>](https://packagist.org/packages/jafar-albadarneh/laravel-ddd)
+
+
 In a Domain-Driven environment, you would want to keep your code as clean and organized as possible.
 This package allows to create a domain-driven architecture in your Laravel app.
 The package assumes the following code structure:
