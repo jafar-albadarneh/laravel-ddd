@@ -66,7 +66,7 @@ These command line tools include:
 After you identify the domain, you can generate it by running the following command:
 
 ```bash
-php artisan create:domain [domain-name]
+php artisan make:domain [domain-name]
 ```
 The command accepts the following options:
 
@@ -78,7 +78,7 @@ The command accepts the following options:
 After creating the domain, you can generate the services by running the following command:
 
 ```bash
-php artisan create:service domain=[domain-name]
+php artisan make:service domain=[domain-name]
 ```
 
 The command accepts the following options:
@@ -90,7 +90,7 @@ The command accepts the following options:
 After creating the domain, you can generate the actions by running the following command:
 
 ```bash
-php artisan create:action domain=[domain-name] --name=[action-name]
+php artisan make:action domain=[domain-name] --name=[action-name]
 ```
 
 The command accepts the following options:
@@ -102,7 +102,7 @@ The command accepts the following options:
 After creating the domain, settle with your services, you can generate DTOs by running the following command:
 
 ```bash
-php artisan create:dto domain=[domain-name] --name=[dto-name]
+php artisan make:dto domain=[domain-name] --name=[dto-name]
 ```
 
 The command accepts the following options:
@@ -115,7 +115,7 @@ The command accepts the following options:
 After creating the domain, you can generate DTOs to support data streams among your services and actions by running the following command:
 
 ```bash
-php artisan create:dto domain=[domain-name] --name=[dto-name]
+php artisan make:dto domain=[domain-name] --name=[dto-name]
 ```
 
 The command accepts the following options:
