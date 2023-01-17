@@ -32,7 +32,7 @@ class GenerateNewServiceCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'create:service {--domain=} {--name=}';
+    protected $signature = 'make:service {--domain=} {--name=}';
 
     /**
      * The console command description.

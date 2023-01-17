@@ -30,7 +30,7 @@ class GenerateNewDTOCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'create:dto {--domain=} {--name=}';
+    protected $signature = 'make:dto {--domain=} {--name=}';
 
     /**
      * The console command description.

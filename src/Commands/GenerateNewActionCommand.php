@@ -30,7 +30,7 @@ class GenerateNewActionCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'create:action {--domain=} {--name=}';
+    protected $signature = 'make:action {--domain=} {--name=}';
 
     /**
      * The console command description.
