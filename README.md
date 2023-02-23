@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jafar-albadarneh/laravel-ddd.svg?style=flat-square)](https://packagist.org/packages/jafar-albadarneh/laravel-ddd)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/jafar-albadarneh/laravel-ddd/run-tests?label=tests)](https://github.com/jafar-albadarneh/laravel-ddd/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/jafar-albadarneh/laravel-ddd/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/jafar-albadarneh/laravel-ddd/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/jafar-albadarneh/laravel-ddd/fix%20php%20code%20style%20issues?label=code%20style)](https://github.com/jafar-albadarneh/laravel-ddd/actions?query=workflow%3A"fix+php+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jafar-albadarneh/laravel-ddd.svg?style=flat-square)](https://packagist.org/packages/jafar-albadarneh/laravel-ddd)
 
 [<img src="https://banners.beyondco.de/Laravel%20DDD.png?theme=dark&packageManager=composer+require&packageName=jafar-albadarneh%2Flaravel-ddd&pattern=brickWall&style=style_1&description=Domain-Driven-Design+in+Actions+for+Laravel+Monolith&md=1&showWatermark=0&fontSize=125px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg"/>](https://packagist.org/packages/jafar-albadarneh/laravel-ddd)
@@ -127,7 +127,7 @@ The command accepts the following options:
 You won't be getting the full potential of the package if you can't associate native laravel resources (Controllers, Requests, Resources, Middlewares) with your domain.
 There are two ways to achieve this:
 
-1- Laravel artisan commands already support passing a namespace to any command. So instead of placing all the resources within the `App\Http` namespace, you can prefix your resource with the domain namespace.
+1- Laravel artisan commands already support passing a namespace to any command. So instead of placing all the resources within the `App\Http` namespace, you can prefix your resource with the **FULL** domain namespace.
 For example, if you want to create a controller for the `Authentication` domain, you can run the following command:
 
 ```bash
