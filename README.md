@@ -131,7 +131,7 @@ There are two ways to achieve this:
 For example, if you want to create a controller for the `Authentication` domain, you can run the following command:
 
 ```bash
-php artisan make:controller App\\Domains\\Authentication\\Http\\Controllers\\LoginController
+php artisan make:controller \\App\\Domains\\Authentication\\Http\\Controllers\\LoginController
 ```
 
 2- [TODO] The package overrides Laravel artisan commands to support passing a domain name to the command. So instead of passing the full namespace of the domain, you can pass a `--domain=[domain-name]` parameter to your command.
