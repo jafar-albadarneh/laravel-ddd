@@ -41,8 +41,6 @@ class GenerateNewActionCommand extends Command
 
     /**
      * Create a new command instance.
-     *
-     * @param  Filesystem  $files
      */
     public function __construct(Filesystem $files)
     {
@@ -55,8 +53,6 @@ class GenerateNewActionCommand extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return int
      */
     public function handle(): int
     {

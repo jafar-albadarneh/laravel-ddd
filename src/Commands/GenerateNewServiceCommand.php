@@ -43,8 +43,6 @@ class GenerateNewServiceCommand extends Command
 
     /**
      * Create a new command instance.
-     *
-     * @param  Filesystem  $files
      */
     public function __construct(Filesystem $files)
     {
@@ -56,8 +54,6 @@ class GenerateNewServiceCommand extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return int
      */
     public function handle(): int
     {
