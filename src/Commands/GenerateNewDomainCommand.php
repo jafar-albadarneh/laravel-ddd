@@ -27,7 +27,6 @@ class GenerateNewDomainCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return int
      *
      * @throws Exception
      */

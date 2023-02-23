@@ -10,9 +10,6 @@ trait WithClassGenerator
 {
     /**
      * Return the Singular Capitalize Name
-     *
-     * @param $name
-     * @return string
      */
     public function getSingularClassName($name): string
     {
@@ -21,8 +18,6 @@ trait WithClassGenerator
 
     /**
      * Return the stub file path
-     *
-     * @return string
      */
     public function getStubPath(): string
     {
@@ -32,8 +27,6 @@ trait WithClassGenerator
     /**
      **
      * Map the stub variables present in stub to its value
-     *
-     * @return array
      */
     public function getStubVariables(): array
     {
@@ -58,7 +51,6 @@ trait WithClassGenerator
     /**
      * Replace the stub variables(key) with the desire value
      *
-     * @param $stub
      * @param  array  $stubVariables
      * @return bool|mixed|string
      */
@@ -75,8 +67,6 @@ trait WithClassGenerator
 
     /**
      * Get the full path of generate class
-     *
-     * @return string
      */
     public function getSourceFilePath(): string
     {
@@ -92,9 +82,6 @@ trait WithClassGenerator
 
     /**
      * Build the directory for the class if necessary.
-     *
-     * @param  string  $path
-     * @return string
      */
     protected function makeDirectory(string $path): string
     {
